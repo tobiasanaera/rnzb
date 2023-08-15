@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal New Zealand Ballet</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+      }
+      p {
+        color: #7a7c84;
+        font-size: 17px;
+        line-height: 1.5;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        width: 400px;
+        max-width: 100%;
+      }
+      h1,
+      h2 {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      h1 {
+        font-size: 35px;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+        font-size: 25px;
+      }
+
+      button {
+        display: block;
+        margin: 0 auto;
+        background-color: white;
+        border: 1px solid;
+        border-radius: 4px;
+        padding: 10px 15px;
+        transition: all 150ms ease-in-out;
+        background: #63bae8;
+        color: white;
+        font-size: 18px;
+      }
+      footer {
+        text-align: center;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .container {
+        display: block;
+        margin: 0 auto;
+        max-width: 600px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      .theme-button {
+        font-size: 15px;
+        border-radius: 3px;
+        padding: 5 8;
+        color: black;
+        background: white;
+      }
+      .theme-button:hover {
+        background: black;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background: white;
+        color: #63bae8;
+        cursor: pointer;
+      }
+      .ballet-link {
+        border-radius: 10px;
+        transition: all 150ms ease-in-out;
+      }
+
+      .ballet-link:hover {
+        filter: contrast(80%);
+        transform: scale(1.1);
+      }
+
+      .grid {
+        margin: 15px 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+      }
+
+      .grid img {
+        width: 100%;
+        border-radius: 5px;
+        transition: all 150ms ease-in-out;
+      }
+
+      .grid img:hover {
+        transform: scale(2);
+      }
+
+      .dark {
+        background: linear-gradient(
+          109.6deg,
+          rgb(36, 45, 57) 11.2%,
+          rgb(16, 37, 60) 51.2%,
+          rgb(0, 0, 0) 98.6%
+        );
+        color: white;
+      }
+
+      .dark .container {
+        background: linear-gradient(to top, #09203f 0%, #537895 100%);
+        color: white;
+      }
+      .dark p {
+        color: white;
+      }
+
+      .dark .web-link {
+        color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="theme-button">Change Theme</button>
+    <div class="container">
+      <h1>The Royal New Zealand Ballet</h1>
+      <h2><em>A show you don't want to miss! </em></h2>
+      <a
+        href="https://rnzb.org.nz/"
+        target="_blank
+        "
+      >
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/086/408/original/4DBWI5DTY52NS3QKDJKXJYUOVE_%281%29.jpg?1687224514"
+          alt=""
+          class="ballet-link"
+        />
+      </a>
+      <div class="grid">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/086/847/original/ballet-dancers.jpg?1687588025"
+          alt=""
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/086/419/original/cinderellaballet.jpg?1687225551"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/086/846/original/rnzb-pic.jpg?1687587741"
+          alt=""
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/086/418/original/ballet-3.jpg?1687225506"
+          alt=""
+        />
+      </div>
+      <p>
+        The Royal New Zealand Ballet (RNZB) is a company of dynamic dancers,
+        performing an eclectic repertoire of outstanding dance for national and
+        international audiences, whilst continuing to build a style that is
+        ultimately unique to this company and Aotearoa, New Zealand. The demands
+        of our audience, particularly within New Zealand, mean that we present
+        an eclectic repertoire of choreographic styles, from 19th century
+        classics to 21st century contemporary works. Our aim is to present dance
+        of outstanding quality. We want to attract New Zealand and international
+        dancers, choreographers and designers who will nurture and grow a
+        company of international acclaim. Our company will have a unique
+        reputation, and will be internationally acknowledged for pushing the
+        boundaries, stretching the limits, and taking the art of classical
+        ballet forward.
+      </p>
+      <a
+        class="web-link"
+        href="https://en.wikipedia.org/wiki/Royal_New_Zealand_Ballet"
+        target="_blank"
+        >Read on Wikipedia</a
+      >
+      <br />
+      <br />
+      <button id="tickets">Buy Tickets Now</button>
+    </div>
+    <br />
+    <footer>Coded by Regina Thomson with HTML, CSS & JavaScript</footer>
+  </body>
+  <script>
+    function changeTheme() {
+      let body = document.querySelector("body");
+
+      if (body.classList.contains("dark")) {
+        body.classList.remove("dark");
+      } else {
+        body.classList.add("dark");
+      }
+    }
+    function ticketButton() {
+      let firstName = prompt("What is your first Name?");
+      let email = prompt("What is your email address?");
+      let amount = prompt("How many tickets were you after?");
+      alert("Thank you " + firstName + "! We'll email you for more details.");
+    }
+
+    let themeButton = document.querySelector(".theme-button");
+    themeButton.addEventListener("click", changeTheme);
+
+    let buyTickets = document.querySelector("#tickets");
+    buyTickets.addEventListener("click", ticketButton);
+  </script>
+</html>
